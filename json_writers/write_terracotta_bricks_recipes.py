@@ -1,4 +1,4 @@
-from json_encoders import (
+from json_templates import (
     recipe_shaped_bricks,
     recipe_shaped_stairs,
     recipe_shaped_slab,
@@ -20,10 +20,11 @@ def write_terracotta_bricks_recipes(color: str):
         file_name=f"{color}{bricks_name}",
         content=recipe_shaped_bricks.encode(
             group=f"{bricks_name}",
-            ingredient=f"atbyw:{color}terracotta",
+            ingredient=f"minecraft:{color}terracotta",
             result=f"atbyw:{color}{bricks_name}"
         ),
-        namespace=namespace
+        namespace=namespace,
+        is_loot_table=False
     )
 
     # Bricks Stairs
@@ -34,7 +35,8 @@ def write_terracotta_bricks_recipes(color: str):
             ingredient=f"atbyw:{color}{bricks_name}",
             result=f"atbyw:{color}{stairs_name}"
         ),
-        namespace=namespace
+        namespace=namespace,
+        is_loot_table=False
     )
 
     # Bricks Slab
@@ -45,7 +47,8 @@ def write_terracotta_bricks_recipes(color: str):
             ingredient=f"atbyw:{color}{bricks_name}",
             result=f"atbyw:{color}{slab_name}"
         ),
-        namespace=namespace
+        namespace=namespace,
+        is_loot_table=False
     )
 
     # Bricks Wall
@@ -56,7 +59,8 @@ def write_terracotta_bricks_recipes(color: str):
             ingredient=f"atbyw:{color}{bricks_name}",
             result=f"atbyw:{color}{wall_name}"
         ),
-        namespace=namespace
+        namespace=namespace,
+        is_loot_table=False
     )
 
 
@@ -74,7 +78,8 @@ def write_terracotta_bricks_stonecutting_recipes(color: str):
             result=f"atbyw:{color}{stairs_name}",
             count=1
         ),
-        namespace=namespace
+        namespace=namespace,
+        is_loot_table=False
     )
 
     # Bricks Slab
@@ -85,7 +90,8 @@ def write_terracotta_bricks_stonecutting_recipes(color: str):
             result=f"atbyw:{color}{slab_name}",
             count=2
         ),
-        namespace=namespace
+        namespace=namespace,
+        is_loot_table=False
     )
 
     # Bricks wall
@@ -94,7 +100,8 @@ def write_terracotta_bricks_stonecutting_recipes(color: str):
         content=recipe_stonecutting.encode(
             ingredient=f"atbyw:{color}{bricks_name}",
             result=f"atbyw:{color}{wall_name}",
-            count=2
+            count=1
         ),
-        namespace=namespace
+        namespace=namespace,
+        is_loot_table=False
     )
