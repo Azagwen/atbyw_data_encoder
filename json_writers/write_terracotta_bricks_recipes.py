@@ -68,7 +68,7 @@ def write_terracotta_bricks_recipes(color: str):
     if color != "":
         # Bricks from dying
         write_json(
-            file_name=f"{color}{bricks_name}",
+            file_name=f"{color}{bricks_name}_from_dying",
             content=recipe_shaped_dye_blocks.encode(
                 group=f"{bricks_name}",
                 ingredient=f"atbyw:{bricks_name}",
@@ -81,7 +81,7 @@ def write_terracotta_bricks_recipes(color: str):
 
         # Bricks Stairs from dying
         write_json(
-            file_name=f"{color}{stairs_name}",
+            file_name=f"{color}{stairs_name}_from_dying",
             content=recipe_shaped_dye_blocks.encode(
                 group=f"{stairs_name}",
                 ingredient=f"atbyw:{stairs_name}",
@@ -94,7 +94,7 @@ def write_terracotta_bricks_recipes(color: str):
 
         # Bricks Slab from dying
         write_json(
-            file_name=f"{color}{slab_name}",
+            file_name=f"{color}{slab_name}_from_dying",
             content=recipe_shaped_dye_blocks.encode(
                 group=f"{slab_name}",
                 ingredient=f"atbyw:{slab_name}",
@@ -107,7 +107,7 @@ def write_terracotta_bricks_recipes(color: str):
 
         # Bricks Wall from dying
         write_json(
-            file_name=f"{color}{wall_name}",
+            file_name=f"{color}{wall_name}_from_dying",
             content=recipe_shaped_dye_blocks.encode(
                 group=f"{wall_name}",
                 ingredient=f"atbyw:{wall_name}",
