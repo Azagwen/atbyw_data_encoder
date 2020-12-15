@@ -64,6 +64,7 @@ def write_terracotta_recipes(color: str):
             is_loot_table=False
         )
 
+
 def write_terracotta_stonecutting_recipes(color: str):
     stairs_name = "terracotta_stairs"
     slab_name = "terracotta_slab"
