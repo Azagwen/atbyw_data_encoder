@@ -8,13 +8,15 @@ from json_templates import (
 )
 from file_writer import *
 from utils import *
+from file_type_helper import *
+
+bricks_name = "terracotta_bricks"
+stairs_name = "terracotta_bricks_stairs"
+slab_name = "terracotta_bricks_slab"
+wall_name = "terracotta_bricks_wall"
 
 
 def write_terracotta_bricks_recipes(color: str):
-    bricks_name = "terracotta_bricks"
-    stairs_name = "terracotta_bricks_stairs"
-    slab_name = "terracotta_bricks_slab"
-    wall_name = "terracotta_bricks_wall"
 
     # Bricks
     write_json(
@@ -25,7 +27,7 @@ def write_terracotta_bricks_recipes(color: str):
             result=f"atbyw:{color}{bricks_name}"
         ),
         namespace=namespace,
-        is_loot_table=False
+        file_type=RECIPE
     )
 
     # Bricks Stairs
@@ -37,7 +39,7 @@ def write_terracotta_bricks_recipes(color: str):
             result=f"atbyw:{color}{stairs_name}"
         ),
         namespace=namespace,
-        is_loot_table=False
+        file_type=RECIPE
     )
 
     # Bricks Slab
@@ -49,7 +51,7 @@ def write_terracotta_bricks_recipes(color: str):
             result=f"atbyw:{color}{slab_name}"
         ),
         namespace=namespace,
-        is_loot_table=False
+        file_type=RECIPE
     )
 
     # Bricks Wall
@@ -61,7 +63,7 @@ def write_terracotta_bricks_recipes(color: str):
             result=f"atbyw:{color}{wall_name}"
         ),
         namespace=namespace,
-        is_loot_table=False
+        file_type=RECIPE
     )
 
     # Recipes from dying
@@ -76,7 +78,7 @@ def write_terracotta_bricks_recipes(color: str):
                 dye_color=color
             ),
             namespace=namespace,
-            is_loot_table=False
+            file_type=RECIPE
         )
 
         # Bricks Stairs from dying
@@ -89,7 +91,7 @@ def write_terracotta_bricks_recipes(color: str):
                 dye_color=color
             ),
             namespace=namespace,
-            is_loot_table=False
+            file_type=RECIPE
         )
 
         # Bricks Slab from dying
@@ -102,7 +104,7 @@ def write_terracotta_bricks_recipes(color: str):
                 dye_color=color
             ),
             namespace=namespace,
-            is_loot_table=False
+            file_type=RECIPE
         )
 
         # Bricks Wall from dying
@@ -115,15 +117,11 @@ def write_terracotta_bricks_recipes(color: str):
                 dye_color=color
             ),
             namespace=namespace,
-            is_loot_table=False
+            file_type=RECIPE
         )
 
 
 def write_terracotta_bricks_stonecutting_recipes(color: str):
-    bricks_name = "terracotta_bricks"
-    stairs_name = "terracotta_bricks_stairs"
-    slab_name = "terracotta_bricks_slab"
-    wall_name = "terracotta_bricks_wall"
 
     # Bricks Stairs
     write_json(
@@ -134,7 +132,7 @@ def write_terracotta_bricks_stonecutting_recipes(color: str):
             count=1
         ),
         namespace=namespace,
-        is_loot_table=False
+        file_type=RECIPE
     )
 
     # Bricks Slab
@@ -146,7 +144,7 @@ def write_terracotta_bricks_stonecutting_recipes(color: str):
             count=2
         ),
         namespace=namespace,
-        is_loot_table=False
+        file_type=RECIPE
     )
 
     # Bricks wall
@@ -158,5 +156,5 @@ def write_terracotta_bricks_stonecutting_recipes(color: str):
             count=1
         ),
         namespace=namespace,
-        is_loot_table=False
+        file_type=RECIPE
     )

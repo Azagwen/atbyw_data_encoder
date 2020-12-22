@@ -3,15 +3,17 @@ from json_templates import (
 )
 from file_writer import *
 from utils import *
+from file_type_helper import *
+
+stairs_name = "terracotta_stairs"
+slab_name = "terracotta_slab"
+bricks_name = "terracotta_bricks"
+bricks_stairs_name = "terracotta_bricks_stairs"
+bricks_slab_name = "terracotta_bricks_slab"
+bricks_wall_name = "terracotta_bricks_wall"
 
 
 def write_terracotta_loot_tables(color: str):
-    stairs_name = "terracotta_stairs"
-    slab_name = "terracotta_slab"
-    bricks_name = "terracotta_bricks"
-    bricks_stairs_name = "terracotta_bricks_stairs"
-    bricks_slab_name = "terracotta_bricks_slab"
-    bricks_wall_name = "terracotta_bricks_wall"
 
     # Stairs
     write_json(
@@ -20,7 +22,7 @@ def write_terracotta_loot_tables(color: str):
             loot=f"atbyw:{color}{stairs_name}"
         ),
         namespace=namespace,
-        is_loot_table=True
+        file_type=LOOT_TABLE
     )
 
     # Slab
@@ -30,7 +32,7 @@ def write_terracotta_loot_tables(color: str):
             loot=f"atbyw:{color}{slab_name}"
         ),
         namespace=namespace,
-        is_loot_table=True
+        file_type=LOOT_TABLE
     )
 
     # Bricks
@@ -40,7 +42,7 @@ def write_terracotta_loot_tables(color: str):
             loot=f"atbyw:{color}{bricks_name}"
         ),
         namespace=namespace,
-        is_loot_table=True
+        file_type=LOOT_TABLE
     )
 
     # Bricks stairs
@@ -50,7 +52,7 @@ def write_terracotta_loot_tables(color: str):
             loot=f"atbyw:{color}{bricks_stairs_name}"
         ),
         namespace=namespace,
-        is_loot_table=True
+        file_type=LOOT_TABLE
     )
 
     # Bricks slab
@@ -60,7 +62,7 @@ def write_terracotta_loot_tables(color: str):
             loot=f"atbyw:{color}{bricks_slab_name}"
         ),
         namespace=namespace,
-        is_loot_table=True
+        file_type=LOOT_TABLE
     )
 
     # Bricks wall
@@ -70,5 +72,5 @@ def write_terracotta_loot_tables(color: str):
             loot=f"atbyw:{color}{bricks_wall_name}"
         ),
         namespace=namespace,
-        is_loot_table=True
+        file_type=LOOT_TABLE
     )
