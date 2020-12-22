@@ -1,4 +1,4 @@
-# ATBYW recipe encoder
+# ATBYW data encoder
 
 this program was created to encode colored blocks recipes rapidly for the Minecraft mod ATBYW.
 
