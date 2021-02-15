@@ -40,4 +40,6 @@ def encode_statue_models():
     for animal in animals:
         write_statue_models(animal)
 
+
+# Below goes the function that will be ran as soon as the program is launched.
 encode_statue_models()
