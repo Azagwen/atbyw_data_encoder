@@ -1,5 +1,6 @@
 from file_type_helper import *
 import os
+from pathlib import Path
 
 output_path = "output"
 data_path = f"{output_path}/data"
@@ -84,13 +85,13 @@ def write_json(namespace: str, file_name: str, content: str, file_type: int):
     elif file_type == BLOCKSTATES:
         path_index = 5
 
-    try:
-        file = open(f"{paths(namespace, path_index)}/{file_name}.json", "x")
-        file.write(content)
-        file.close()
-        print(f"[Created] {paths(namespace, path_index)}/{file_name}.json")
-    except FileExistsError:
-        file = open(f"{paths(namespace, path_index)}/{file_name}.json", "w")
-        file.write(content)
-        file.close()
-        print(f"[Overwritten] {paths(namespace, path_index)}/{file_name}.json")
+    target_path = Path(f"{paths(namespace, path_index)}/{file_name}.json")
+    if target_path.exists():
+        print(f"[Overwritten] {target_path}")
+    else:
+        print(f"[Created] {target_path}")
+
+    file = open(target_path, 'w')
+    file.write(content)
+    file.close()
+

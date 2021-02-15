@@ -1,0 +1,38 @@
+from json_templates import model_statue
+from file_writer import *
+from utils import *
+from file_type_helper import *
+
+
+def write_statue_models(animal: str):
+    name = f"{animal}statue"
+    levels = {0, 1, 2, 3, 4}
+
+    for level in levels:
+        write_json(
+            file_name=f"{name}_{level}",
+            content=model_statue.encode_block_model(
+                statue_name=name,
+                level=level
+            ),
+            namespace=namespace,
+            file_type=BLOCK_MODEL
+        )
+
+    write_json(
+        file_name=name,
+        content=model_statue.encode_item_model(
+            statue_name=name
+        ),
+        namespace=namespace,
+        file_type=ITEM_MODEL
+    )
+
+    write_json(
+        file_name=name,
+        content=model_statue.encode_blockstates(
+            statue_name=name
+        ),
+        namespace=namespace,
+        file_type=BLOCKSTATES
+    )
