@@ -7,6 +7,7 @@ from json_writers.write_concrete_recipes import *
 from json_writers.write_cinder_bricks_recipes import *
 from json_writers.write_concrete_loot_tables import *
 from json_writers.write_statue_models import *
+from json_writers.write_waxed_statue_models import *
 from file_writer import *
 from utils import *
 
@@ -41,5 +42,11 @@ def encode_statue_models():
         write_statue_models(animal)
 
 
+def encode_waxed_statue_models():
+    DirectoryWriter(namespace).create_output_dirs()
+    for animal in animals:
+        write_waxed_statue_models(animal)
+
+
 # Below goes the function that will be ran as soon as the program is launched.
-encode_statue_models()
+encode_waxed_statue_models()
