@@ -11,7 +11,7 @@ def write_waxed_statue_models(animal: str):
 
     for level in levels:
         write_json(
-            file_name=f"{prefixes[level]}_waxed_{name}",
+            file_name=f"waxed_{prefixes[level]}_{name}",
             content=model_waxed_statue.encode_item_model(
                 statue_name=name,
                 level=level
@@ -21,7 +21,7 @@ def write_waxed_statue_models(animal: str):
         )
 
         write_json(
-            file_name=f"{prefixes[level]}_waxed_{name}",
+            file_name=f"waxed_{prefixes[level]}_{name}",
             content=model_waxed_statue.encode_blockstates(
                 statue_name=name,
                 level=level

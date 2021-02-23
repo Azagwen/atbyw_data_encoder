@@ -1,5 +1,6 @@
 from json_templates import (
-    loot_table_drop_self
+    loot_table_drop_self,
+    loot_table_slab_drop_self
 )
 from file_writer import *
 from utils import *
@@ -25,7 +26,7 @@ def write_concrete_loot_tables(color: str):
         # Slab
         write_json(
             file_name=f"{color}{slab_name}",
-            content=loot_table_drop_self.encode(
+            content=loot_table_slab_drop_self.encode(
                 loot=f"atbyw:{color}{slab_name}"
             ),
             namespace=namespace,
