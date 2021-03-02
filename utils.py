@@ -1,3 +1,4 @@
+namespace = "atbyw"
 underscore = "_"
 colors = [
     "",
@@ -34,4 +35,18 @@ animals = [
     f"slime{underscore}",
     f"magma_cube{underscore}"
 ]
-namespace = "atbyw"
+column_stones = [
+    f"granite{underscore}",
+    f"diorite{underscore}",
+    f"andesite{underscore}",
+    f"sandstone{underscore}",
+    f"red_sandstone{underscore}",
+    f"purpur{underscore}",
+    f"stone_bricks{underscore}",
+    f"mossy_stone_bricks{underscore}",
+    f"cracked_stone_bricks{underscore}",
+    f"nether_bricks{underscore}",
+    f"quartz{underscore}",
+    f"prismarine{underscore}",
+    f"blackstone{underscore}"
+]

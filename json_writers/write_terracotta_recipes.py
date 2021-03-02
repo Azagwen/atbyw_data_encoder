@@ -1,9 +1,5 @@
-from json_templates import (
-    recipe_shaped_stairs,
-    recipe_shaped_slab,
-    recipe_stonecutting,
-    recipe_shaped_dye_blocks
-)
+from json_templates.recipes import recipe_shaped_dye_blocks, recipe_shaped_stairs, recipe_stonecutting, \
+    recipe_shaped_slab
 from file_writer import *
 from utils import *
 from file_type_helper import *

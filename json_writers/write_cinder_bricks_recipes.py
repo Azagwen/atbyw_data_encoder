@@ -1,9 +1,4 @@
-from json_templates import (
-    recipe_shaped_bricks,
-    recipe_shaped_wall,
-    recipe_stonecutting,
-    recipe_shaped_dye_blocks
-)
+from json_templates.recipes import recipe_shaped_bricks, recipe_stonecutting, recipe_shaped_wall
 from file_writer import *
 from utils import *
 from file_type_helper import *

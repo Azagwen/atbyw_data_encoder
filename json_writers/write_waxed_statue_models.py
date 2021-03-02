@@ -1,4 +1,4 @@
-from json_templates import model_waxed_statue
+from json_templates.models import model_waxed_statue
 from file_writer import *
 from utils import *
 from file_type_helper import *

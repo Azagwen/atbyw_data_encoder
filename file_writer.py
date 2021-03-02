@@ -1,6 +1,8 @@
 from file_type_helper import *
-import os
 from pathlib import Path
+from termcolor import colored, cprint
+import os
+import sys
 
 output_path = "output"
 data_path = f"{output_path}/data"
@@ -48,7 +50,8 @@ class DirectoryWriter:
         try:
             os.mkdir(path)
         except FileExistsError:
-            print(f"[Notice] {path} already exists !")
+            notice = colored("[Notice]", "yellow", attrs=["bold"])
+            cprint(f"{notice} {path} already exists !")
 
     def create_output_dirs(self):
         self.create_dir(output_path)
@@ -87,9 +90,11 @@ def write_json(namespace: str, file_name: str, content: str, file_type: int):
 
     target_path = Path(f"{paths(namespace, path_index)}/{file_name}.json")
     if target_path.exists():
-        print(f"[Overwritten] {target_path}")
+        notice = colored("[Overwritten]", "yellow", attrs=["bold"])
+        cprint(f"{notice} {target_path}")
     else:
-        print(f"[Created] {target_path}")
+        notice = colored("[Created]", "green", attrs=["bold"])
+        cprint(f"{notice} {target_path}")
 
     file = open(target_path, 'w')
     file.write(content)

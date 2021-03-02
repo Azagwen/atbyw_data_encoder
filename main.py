@@ -9,52 +9,53 @@ from json_writers.write_concrete_loot_tables import *
 from json_writers.write_statue_models import *
 from json_writers.write_waxed_statue_models import *
 from json_writers.write_statue_loot_tables import *
+from json_writers.write_column_models import *
 from file_writer import *
+from json_templates.loot_tables import loot_table_drop_self
 from utils import *
 
 
-def encode_terracotta_data():
+def write_loot_tables_from_array(blocks: list):
     DirectoryWriter(namespace).create_output_dirs()
-    for color in colors:
-        # write_terracotta_recipes(color)
-        # write_terracotta_bricks_recipes(color)
-        # write_terracotta_stonecutting_recipes(color)
-        # write_terracotta_bricks_stonecutting_recipes(color)
-        write_terracotta_loot_tables(color)
-
-
-def encode_concrete_assets():
-    DirectoryWriter(namespace).create_output_dirs()
-    for color in colors:
-        # write_concrete_stairs_models(color)
-        # write_concrete_slab_models(color)
-        # write_cinder_bricks_models(color)
-        # write_cinder_blocks_walls_models(color)
-        # write_concrete_recipes(color)
-        # write_cinder_bricks_recipes(color)
-        # write_concrete_stonecutting_recipes(color)
-        # write_cinder_bricks_stonecutting_recipes(color)
-        write_concrete_loot_tables(color)
-
-
-def encode_statue_models():
-    DirectoryWriter(namespace).create_output_dirs()
-    for animal in animals:
-        write_statue_models(animal)
-
-
-def encode_waxed_statue_models():
-    DirectoryWriter(namespace).create_output_dirs()
-    for animal in animals:
-        write_waxed_statue_models(animal)
-
-
-def encode_statue_data():
-    DirectoryWriter(namespace).create_output_dirs()
-    for animal in animals:
-        write_statue_loot_tables(animal)
+    for block in blocks:
+        write_json(
+            file_name=block,
+            content=loot_table_drop_self.encode(
+                loot=f"atbyw:{block}"
+            ),
+            namespace=namespace,
+            file_type=LOOT_TABLE
+        )
 
 
 # Below goes the function that will be ran as soon as the program is launched.
-encode_terracotta_data()
-encode_concrete_assets()
+write_loot_tables_from_array([
+    "granite_tiles",
+    "diorite_bricks",
+    "andesite_bricks",
+
+    "purpur_tiles",
+    "smooth_purpur_block",
+    "chiseled_purpur_block",
+    "purpur_tiles_stairs",
+    "smooth_purpur_stairs",
+    "purpur_tiles_slab",
+    "smooth_purpur_slab",
+
+    "granite_column",
+    "diorite_column",
+    "andesite_column",
+    "sandstone_column",
+    "chiseled_sandstone_column",
+    "red_sandstone_column",
+    "chiseled_red_sandstone_column",
+    "purpur_column",
+    "stone_bricks_column",
+    "mossy_stone_bricks_column",
+    "cracked_stone_bricks_column",
+    "nether_bricks_column",
+    "quartz_column",
+    "prismarine_column",
+    "blackstone_column",
+])
+

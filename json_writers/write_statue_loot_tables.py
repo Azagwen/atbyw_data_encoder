@@ -1,4 +1,4 @@
-from json_templates import loot_table_drop_self
+from json_templates.loot_tables import loot_table_drop_self
 from file_writer import *
 from utils import *
 from file_type_helper import *

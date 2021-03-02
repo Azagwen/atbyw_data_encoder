@@ -1,7 +1,4 @@
-from json_templates import (
-    model_stairs,
-    model_slab
-)
+from json_templates.models import model_stairs, model_slab
 from file_writer import *
 from utils import *
 from file_type_helper import *

@@ -1,7 +1,4 @@
-from json_templates import (
-    model_cinder_bricks,
-    model_walls
-)
+from json_templates.models import model_walls, model_cinder_bricks
 from file_writer import *
 from utils import *
 from file_type_helper import *
